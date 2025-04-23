@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="云搬家助手 - 智能生成个性化搬家清单，让搬家更轻松">
+    <meta name="theme-color" content="#3A7BFF">
+    <title>云搬家助手 - 让搬家更轻松</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="ri-cloud-line"></i>云搬家助手</h1>
+            <p>智能分析您的需求，为您生成个性化搬家清单</p>
+            <div class="header-decoration">
+                <div class="cloud-particle"></div>
+                <div class="cloud-particle"></div>
+                <div class="cloud-particle"></div>
+            </div>
+        </header>
+        <main>
+            <div class="control-panel">
+                <button id="generateBtn" class="primary-btn">
+                    <i class="ri-magic-line"></i>
+                    <span>生成搬家清单</span>
+                </button>
+                <div class="loading-indicator hidden">
+                    <div class="cloud-loading"></div>
+                    <p>正在智能生成您的搬家清单...</p>
+                </div>
+            </div>
+            <div class="checklist-container">
+                <div id="checklistResult" class="hidden">
+                    <div class="checklist-header">
+                        <h2><i class="ri-list-check"></i>您的搬家清单</h2>
+                        <div class="checklist-actions">
+                            <button class="action-btn" id="saveBtn" title="保存清单">
+                                <i class="ri-save-line"></i>
+                            </button>
+                            <button class="action-btn" id="shareBtn" title="分享清单">
+                                <i class="ri-share-line"></i>
+                            </button>
+                            <button class="action-btn" id="printBtn" title="打印清单">
+                                <i class="ri-printer-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="categories"></div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>© 2025 云搬家助手 - 让搬家更轻松</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
