@@ -98,13 +98,31 @@ document.addEventListener('DOMContentLoaded', () => {
         generateBtn.disabled = false;
         loadingIndicator.classList.add('hidden');
 
+        // 更新进度条函数
+        function updateProgress() {
+            const allItems = document.querySelectorAll('.category li');
+            const completedItems = Array.from(allItems).filter(item =>
+                item.style.textDecoration === 'line-through'
+            );
+            const progress = allItems.length > 0 ? (completedItems.length / allItems.length) * 100 : 0;
+            const progressPercentage = document.getElementById('progressPercentage');
+            const progressFill = document.getElementById('progressFill');
+
+            progressPercentage.textContent = Math.round(progress) + '%';
+            progressFill.style.width = progress + '%';
+        }
+
         // 添加点击事件到每个清单项
         document.querySelectorAll('.category li').forEach(item => {
             item.addEventListener('click', function() {
                 this.style.textDecoration = this.style.textDecoration === 'line-through' ? 'none' : 'line-through';
                 this.style.color = this.style.textDecoration === 'line-through' ? '#a0aec0' : '';
+                updateProgress(); // 更新进度条
             });
         });
+
+        // 初始化进度为0%
+        updateProgress();
     }
 
     // 保存清单功能
